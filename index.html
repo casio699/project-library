@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>My Anime Library</h1>
+    </header>
+
+    <button id="new-anime-btn" onclick="showForm()">NEW ANIME</button>
+
+    <div id="form-container" style="display: none;">
+        <form id="anime-form">
+            <button type="button" onclick="resetAndHide()">CANCEL</button>
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="type">Type:</label>
+<select id="type" name="type" required>
+    <option value="Series">Series - A serialized format with multiple episodes</option>
+    <option value="Movie">Movie - A standalone feature film</option>
+    <option value="OVA">OVA (Original Video Animation) - A special episode or series not broadcast on TV</option>
+    <option value="ONA">ONA (Original Net Animation) - Anime distributed on the internet</option>
+    <option value="Special">Special - One-shot episodes or short anime specials</option>
+    <option value="Manga">Manga - Japanese comic or graphic novel</option>
+</select>
+
+<label for="genre">Genre:</label>
+<select id="genre" name="genre" onchange="handleGenreSelection()" required>
+    <option value="Action">Action - Exciting battles and intense combat scenes</option>
+    <option value="Adventure">Adventure - Characters embark on a journey, exploring new worlds</option>
+    <option value="Comedy">Comedy - Humorous and light-hearted content designed to make you laugh</option>
+    <option value="Drama">Drama - Emotionally charged stories focusing on character conflicts</option>
+    <option value="Fantasy">Fantasy - Magical worlds, mythical creatures, and supernatural elements</option>
+    <option value="Horror">Horror - Evokes fear and suspense with supernatural or psychological elements</option>
+    <option value="Mecha">Mecha - Involves giant robots or mechanical suits in battles</option>
+    <option value="Mystery">Mystery - Involves solving puzzles and uncovering secrets</option>
+    <option value="Psychological">Psychological - Explores the human mind, emotions, and psychological aspects</option>
+    <option value="Romance">Romance - Focuses on romantic relationships and love stories</option>
+    <option value="Science Fiction">Science Fiction - Explores futuristic or speculative concepts and technology</option>
+    <option value="Slice of Life">Slice of Life - Portrays ordinary, everyday life experiences</option>
+    <option value="Sports">Sports - Centers around competitive sports and athletes</option>
+    <option value="Supernatural">Supernatural - Features elements beyond the natural world, such as magic</option>
+    <option value="Thriller">Thriller - Intense and suspenseful storytelling</option>
+    <option value="Shounen">Shounen - Geared towards a young male audience with action-oriented themes</option>
+    <option value="Shoujo">Shoujo - Targeted at a young female audience, often with romance themes</option>
+    <option value="Seinen">Seinen - Geared towards adult men with mature themes and complex stories</option>
+    <option value="Josei">Josei - Targeted at adult women with mature and realistic themes</option>
+    <option value="Isekai">Isekai - Involves characters being transported to another world or dimension</option>
+                <!-- Other option -->
+                <option value="Other">Other</option>
+</select>
+            <!-- Input field for other genre (initially hidden) -->
+            <input type="text" id="other-genre" name="other-genre" style="display: none;" placeholder="Enter other genre">
+
+            <label for="seasons">Seasons:</label>
+<select id="seasons" name="seasons" onchange="handleSeasonsSelection()" required>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+                <!-- Other option -->
+                <option value="Other">Other</option>
+</select>
+
+    <!-- Input field for other genre (initially hidden) -->
+            <input type="number" id="other-seasons" name="other-seasons" style="display: none;" placeholder="Enter number of seasons">
+
+
+            <label for="episodes">Episodes:</label>
+            <input type="number" id="episodes" name="episodes" required>
+
+            <label for="watched">Last Watched Episode:</label>
+            <input type="number" id="watched" name="watched" placeholder="Enter episode number" required>
+
+            <label for="completed">Completed:</label>
+            <input type="checkbox" id="completed" name="completed">
+
+            <button type="button" onclick="addAnimeMedia()">Add Anime</button>
+        </form>
+    </div>
+
+    <div id="media-list"></div>
+</body>
+</html>
